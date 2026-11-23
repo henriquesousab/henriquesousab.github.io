@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henrique Sousa | Developer • Gamer • Tech Enthusiast</title>
+    <title>Henrique Sousa | Senior Project Manager & Developer</title>
     <link rel="icon" type="image/png" href="puzzleglot-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --bg-base: #030712;
-            --bg-card: rgba(8, 17, 36, 0.78);
-            --bg-card-hover: rgba(13, 27, 58, 0.9);
-            --border-glow: rgba(0, 212, 255, 0.22);
-            --border-glow-hover: rgba(0, 212, 255, 0.65);
+            --bg-card: rgba(8, 17, 36, 0.72);
+            --bg-card-hover: rgba(12, 26, 56, 0.88);
+            --border-glow: rgba(0, 212, 255, 0.2);
+            --border-glow-hover: rgba(0, 212, 255, 0.55);
             --cyan-glow: #00d4ff;
             --blue-glow: #0066ff;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --text-highlight: #38bdf8;
+            --whatsapp-green: #25d366;
+            --linkedin-blue: #0a66c2;
         }
 
         * {
@@ -50,37 +52,36 @@
             right: 0;
             bottom: 0;
             background-image:
-                radial-gradient(circle at 15% 15%, rgba(0, 102, 255, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.16) 0%, transparent 45%),
-                radial-gradient(rgba(0, 212, 255, 0.07) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 30px 30px;
+                radial-gradient(circle at 15% 15%, rgba(0, 102, 255, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.14) 0%, transparent 45%),
+                radial-gradient(rgba(0, 212, 255, 0.06) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 32px 32px;
             pointer-events: none;
             z-index: 0;
         }
 
         .wrapper {
             width: 100%;
-            max-width: 1060px;
+            max-width: 1020px;
             padding: 24px 20px 48px;
             z-index: 1;
             position: relative;
         }
 
-        /* Banner Hero Container */
+        /* Hero Banner */
         .banner-container {
             width: 100%;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border-glow);
-            box-shadow: 0 10px 35px -10px rgba(0, 150, 255, 0.35), 0 0 25px rgba(0, 212, 255, 0.18);
+            box-shadow: 0 10px 35px -10px rgba(0, 150, 255, 0.35), 0 0 25px rgba(0, 212, 255, 0.15);
             background: #060e22;
             transition: all 0.35s ease;
         }
 
         .banner-container:hover {
-            box-shadow: 0 15px 45px -10px rgba(0, 150, 255, 0.5), 0 0 35px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 14px 40px -10px rgba(0, 150, 255, 0.45), 0 0 30px rgba(0, 212, 255, 0.25);
             border-color: var(--border-glow-hover);
-            transform: translateY(-2px);
         }
 
         .banner-img {
@@ -90,15 +91,15 @@
             object-fit: cover;
         }
 
-        /* Profile Info Bar */
+        /* Profile & Quick Contacts */
         .profile-strip {
             margin-top: 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 16px;
-            padding: 22px 28px;
+            gap: 18px;
+            padding: 24px 28px;
             background: var(--bg-card);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -117,29 +118,33 @@
 
         .profile-title h1 span {
             color: var(--cyan-glow);
-            text-shadow: 0 0 14px rgba(0, 212, 255, 0.45);
+            text-shadow: 0 0 14px rgba(0, 212, 255, 0.4);
         }
 
-        .profile-title p {
-            font-size: 0.88rem;
+        .profile-subtitle {
+            font-size: 0.92rem;
             font-weight: 600;
-            letter-spacing: 1.6px;
             color: var(--text-highlight);
-            text-transform: uppercase;
             margin-top: 4px;
             display: flex;
             align-items: center;
             gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .profile-title p span.dot {
-            color: var(--cyan-glow);
+        .location-tag {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        /* Buttons */
-        .social-links {
+        /* Contact Action Bar */
+        .contact-actions {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
@@ -147,426 +152,388 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 18px;
-            border-radius: 12px;
-            font-size: 0.9rem;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 0.88rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.25s ease;
             cursor: pointer;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #0066ff, #00d4ff);
-            color: #040814;
-            font-weight: 700;
-            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.35);
-            border: none;
+        .btn-whatsapp {
+            background: rgba(37, 211, 102, 0.12);
+            color: #4ade80;
+            border: 1px solid rgba(37, 211, 102, 0.35);
         }
 
-        .btn-primary:hover {
+        .btn-whatsapp:hover {
+            background: #25d366;
+            color: #030712;
+            box-shadow: 0 0 16px rgba(37, 211, 102, 0.45);
             transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0, 212, 255, 0.6);
-            color: #000;
         }
 
-        .btn-outline {
-            background: rgba(0, 212, 255, 0.05);
+        .btn-linkedin {
+            background: rgba(10, 102, 194, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(10, 102, 194, 0.4);
+        }
+
+        .btn-linkedin:hover {
+            background: #0a66c2;
+            color: #ffffff;
+            box-shadow: 0 0 16px rgba(10, 102, 194, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-github {
+            background: rgba(255, 255, 255, 0.05);
             color: var(--text-main);
             border: 1px solid var(--border-glow);
         }
 
-        .btn-outline:hover {
-            background: rgba(0, 212, 255, 0.14);
+        .btn-github:hover {
+            background: rgba(0, 212, 255, 0.15);
             border-color: var(--cyan-glow);
             color: var(--cyan-glow);
             transform: translateY(-2px);
         }
 
-        /* Featured App Showcase Card */
-        .featured-card {
-            margin-top: 28px;
-            background: linear-gradient(145deg, rgba(10, 22, 48, 0.85) 0%, rgba(5, 12, 28, 0.95) 100%);
-            border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            padding: 32px;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
+        .btn-email {
+            background: linear-gradient(135deg, #0066ff, #00d4ff);
+            color: #030712;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 4px 14px rgba(0, 212, 255, 0.3);
         }
 
-        .featured-card::before {
+        .btn-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.55);
+            color: #000;
+        }
+
+        /* Clean & Elegant Game Spotlight */
+        .game-spotlight {
+            margin-top: 24px;
+            background: linear-gradient(145deg, rgba(8, 18, 42, 0.85) 0%, rgba(4, 10, 24, 0.95) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 26px 30px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .game-spotlight::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ffb703, var(--cyan-glow), var(--blue-glow), transparent);
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffb703, var(--cyan-glow), transparent);
         }
 
-        .featured-body {
+        .game-main-row {
             display: flex;
             align-items: center;
-            gap: 36px;
+            gap: 28px;
         }
 
-        .logo-box {
+        .game-logo-wrap {
             flex-shrink: 0;
-            width: 220px;
+            width: 170px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .app-logo {
+        .game-logo-img {
             width: 100%;
             height: auto;
-            max-width: 220px;
+            max-width: 170px;
             display: block;
-            filter: drop-shadow(0 12px 25px rgba(255, 183, 3, 0.35));
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 8px 18px rgba(255, 183, 3, 0.3));
+            transition: transform 0.3s ease;
         }
 
-        .app-logo:hover {
-            transform: scale(1.05) rotate(-1deg);
+        .game-logo-img:hover {
+            transform: scale(1.04);
         }
 
-        .featured-details {
+        .game-info {
             flex: 1;
         }
 
-        .app-badge-row {
+        .game-header-tag {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
         }
 
-        .badge-live {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
+        .badge-pill {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
             border-radius: 9999px;
-            background: rgba(16, 185, 129, 0.12);
-            border: 1px solid rgba(16, 185, 129, 0.35);
-            color: #34d399;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .badge-live .pulse-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: #10b981;
-            box-shadow: 0 0 8px #10b981;
-        }
-
-        .featured-desc {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        /* Mini-Games Showcase Pill Tags */
-        .minigames-strip {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
-
-        .minigames-label {
-            font-size: 0.8rem;
-            color: var(--text-highlight);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .game-pill {
-            font-size: 0.82rem;
-            font-weight: 600;
-            padding: 5px 12px;
-            border-radius: 8px;
-            background: rgba(0, 102, 255, 0.12);
-            border: 1px solid rgba(0, 212, 255, 0.25);
-            color: #bae6fd;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Tech Pills */
-        .tech-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tech-pill {
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-        }
-
-        /* Legal & Trust Center Hub (3 Cards) */
-        .compliance-hub {
-            margin-top: 30px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .hub-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-highlight);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .hub-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-
-        @media (max-width: 900px) {
-            .hub-grid {
-                grid-template-columns: 1fr;
-            }
-            .featured-body {
-                flex-direction: column;
-                text-align: center;
-            }
-            .app-badge-row, .minigames-strip, .tech-tags {
-                justify-content: center;
-            }
-            .logo-box {
-                width: 100%;
-                max-width: 200px;
-            }
-        }
-
-        .hub-card {
-            background: rgba(4, 12, 28, 0.65);
-            border: 1px solid var(--border-glow);
-            border-radius: 14px;
-            padding: 18px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hub-card:hover {
-            transform: translateY(-4px);
-            background: rgba(8, 22, 50, 0.85);
-            border-color: var(--cyan-glow);
-            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.25);
-        }
-
-        .hub-card-top {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .hub-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.25);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cyan-glow);
-            font-size: 1.15rem;
-            transition: all 0.25s ease;
-        }
-
-        .hub-card:hover .hub-icon {
-            background: var(--cyan-glow);
-            color: #040814;
-            box-shadow: 0 0 15px var(--cyan-glow);
-        }
-
-        .hub-card-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .hub-card-desc {
-            font-size: 0.84rem;
-            color: var(--text-muted);
-            line-height: 1.45;
-            margin-bottom: 14px;
-        }
-
-        .hub-card-action {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--cyan-glow);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .hub-card-action i {
-            transition: transform 0.2s ease;
+        .badge-spotlight {
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #34d399;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .hub-card:hover .hub-card-action i {
-            transform: translateX(4px);
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #10b981;
+            box-shadow: 0 0 6px #10b981;
         }
 
-        /* Secondary Grid */
-        .section-grid {
-            margin-top: 24px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .game-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.55;
+            margin-bottom: 12px;
         }
 
-        @media (max-width: 768px) {
-            .section-grid {
-                grid-template-columns: 1fr;
-            }
-            .profile-strip {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .featured-card {
-                padding: 24px 20px;
-            }
+        .minigames-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-size: 0.84rem;
+            color: #cbd5e1;
+            margin-bottom: 16px;
         }
 
-        .card {
-            background: var(--bg-card);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+        .minigames-line strong {
+            color: var(--text-highlight);
+        }
+
+        .minigame-tag {
+            background: rgba(0, 102, 255, 0.12);
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #e0f2fe;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Streamlined Compliance Toolbar (Clean 3 Buttons) */
+        .game-compliance-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .compliance-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .compliance-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 8px;
+            background: rgba(0, 212, 255, 0.05);
             border: 1px solid var(--border-glow);
-            border-radius: 18px;
-            padding: 24px;
-            transition: all 0.3s ease;
+            color: var(--text-main);
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
         }
 
-        .card:hover {
+        .compliance-btn:hover {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: var(--cyan-glow);
+            color: var(--cyan-glow);
+            transform: translateY(-2px);
+        }
+
+        .compliance-btn.delete-btn {
+            border-color: rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .compliance-btn.delete-btn:hover {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+            color: #ffffff;
+        }
+
+        /* Professional Pillars (Resume Highlights) */
+        .section-heading {
+            margin-top: 32px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .section-heading-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-glow), transparent);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .pillar-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pillar-card:hover {
             border-color: var(--border-glow-hover);
             transform: translateY(-3px);
             box-shadow: 0 8px 24px rgba(0, 150, 255, 0.2);
             background: var(--bg-card-hover);
         }
 
-        .card-header {
+        .pillar-header {
             display: flex;
             align-items: center;
             gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .pillar-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid var(--border-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyan-glow);
+            font-size: 1.15rem;
+        }
+
+        .pillar-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .pillar-desc {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.55;
             margin-bottom: 14px;
         }
 
-        .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid var(--border-glow);
+        .chip-row {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cyan-glow);
-            font-size: 1.25rem;
+            gap: 6px;
+            flex-wrap: wrap;
         }
 
-        .card-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
+        .chip {
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
         }
 
-        .card-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 18px;
-        }
-
-        /* Footer */
+        /* Minimal Clean Footer */
         footer {
-            margin-top: 48px;
+            margin-top: 44px;
             text-align: center;
-            padding: 30px 20px 16px;
+            padding: 24px 20px 8px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             color: var(--text-muted);
-            font-size: 0.88rem;
-        }
-
-        .footer-nav {
+            font-size: 0.85rem;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-bottom: 18px;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
         }
 
-        .footer-nav a {
-            color: #cbd5e1;
+        footer a.ads-txt-link {
+            color: var(--cyan-glow);
             text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.82rem;
             transition: color 0.2s ease;
         }
 
-        .footer-nav a:hover {
-            color: var(--cyan-glow);
+        footer a.ads-txt-link:hover {
             text-decoration: underline;
         }
 
-        .footer-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 14px;
-            padding: 6px 16px;
-            border-radius: 9999px;
-            background: rgba(0, 212, 255, 0.06);
-            border: 1px solid var(--border-glow);
-            font-size: 0.8rem;
-            color: var(--text-highlight);
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #10b981;
+        /* Mobile Adjustments */
+        @media (max-width: 820px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .game-main-row {
+                flex-direction: column;
+                text-align: center;
+            }
+            .game-logo-wrap {
+                width: 100%;
+                max-width: 160px;
+            }
+            .game-header-tag, .minigames-line, .game-compliance-bar {
+                justify-content: center;
+            }
+            .profile-strip {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -578,184 +545,155 @@
             <img src="banner.png" alt="Henrique Sousa - Developer • Gamer • Tech Enthusiast" class="banner-img">
         </div>
 
-        <!-- Profile Bar -->
+        <!-- Profile Bar & Contacts -->
         <div class="profile-strip">
             <div class="profile-title">
                 <h1>Henrique <span>Sousa</span></h1>
-                <p>Developer <span class="dot">•</span> Gamer <span class="dot">•</span> Tech Enthusiast</p>
+                <div class="profile-subtitle">
+                    Senior Project Manager & Developer
+                    <span class="location-tag"><i class="fa-solid fa-location-dot"></i> Fortaleza - CE</span>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/henriquesousab" target="_blank" rel="noopener" class="btn btn-outline">
+            <div class="contact-actions">
+                <a href="https://www.linkedin.com/in/henrique-sousab/" target="_blank" rel="noopener" class="btn btn-linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://wa.me/5585996315566" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://github.com/henriquesousab" target="_blank" rel="noopener" class="btn btn-github">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
-                <a href="mailto:henriquesousab@gmail.com" class="btn btn-primary">
-                    <i class="fa-solid fa-envelope"></i> Contato
+                <a href="mailto:henrique.sousab@gmail.com" class="btn btn-email">
+                    <i class="fa-solid fa-envelope"></i> E-mail
                 </a>
             </div>
         </div>
 
-        <!-- Featured Project: PuzzleGlot Showcase -->
-        <div class="featured-card">
-            <div class="featured-body">
-                <!-- 3D Official Game Logo -->
-                <div class="logo-box">
-                    <img src="puzzleglot-logo.png" alt="PuzzleGlot Official Logo" class="app-logo">
+        <!-- Clean Game Spotlight: PuzzleGlot -->
+        <div class="game-spotlight">
+            <div class="game-main-row">
+                <!-- 3D Game Logo -->
+                <div class="game-logo-wrap">
+                    <img src="puzzleglot-logo.png" alt="PuzzleGlot Official Logo" class="game-logo-img">
                 </div>
 
-                <!-- Game Details -->
-                <div class="featured-details">
-                    <div class="app-badge-row">
-                        <span class="badge-live"><span class="pulse-dot"></span> Projeto em Destaque</span>
-                        <span class="badge-live" style="background: rgba(0, 212, 255, 0.1); border-color: rgba(0, 212, 255, 0.3); color: var(--cyan-glow);">
-                            <i class="fa-brands fa-google-play"></i> Android App
+                <!-- Info & Pitch -->
+                <div class="game-info">
+                    <div class="game-header-tag">
+                        <span class="badge-pill badge-spotlight"><span class="pulse-dot"></span> Projeto em Destaque</span>
+                        <span class="badge-pill" style="background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); color: var(--cyan-glow);">
+                            <i class="fa-brands fa-android"></i> Android
                         </span>
                     </div>
 
-                    <p class="featured-desc">
-                        Experiência dinâmica de aprendizado de idiomas que combina diversão arcade, mecânicas de quebra-cabeças e gamificação para acelerar o vocabulário.
+                    <p class="game-desc">
+                        Experiência dinâmica de aprendizado de idiomas combinando quebra-cabeças, raciocínio rápido e mecânicas arcade para fixação natural de vocabulário.
                     </p>
 
-                    <!-- Mini-Games Highlight -->
-                    <div class="minigames-strip">
-                        <span class="minigames-label"><i class="fa-solid fa-gamepad"></i> Mini-Games:</span>
-                        <span class="game-pill"><i class="fa-solid fa-apple-whole"></i> Fruit Merge</span>
-                        <span class="game-pill"><i class="fa-solid fa-table-cells"></i> Crosswords</span>
-                        <span class="game-pill"><i class="fa-solid fa-meteor"></i> Word Invaders</span>
+                    <div class="minigames-line">
+                        <strong>Mini-Games:</strong>
+                        <span class="minigame-tag"><i class="fa-solid fa-apple-whole"></i> Fruit Merge</span>
+                        <span class="minigame-tag"><i class="fa-solid fa-table-cells"></i> Crosswords</span>
+                        <span class="minigame-tag"><i class="fa-solid fa-meteor"></i> Word Invaders</span>
                     </div>
 
-                    <div class="tech-tags">
-                        <span class="tech-pill"><i class="fa-brands fa-android"></i> Android</span>
-                        <span class="tech-pill"><i class="fa-solid fa-layer-group"></i> Capacitor</span>
-                        <span class="tech-pill"><i class="fa-solid fa-fire"></i> Firebase Cloud Save</span>
-                        <span class="tech-pill"><i class="fa-solid fa-bolt"></i> Feedback Tátil</span>
-                        <span class="tech-pill"><i class="fa-solid fa-rectangle-ad"></i> AdMob</span>
+                    <!-- Clean 3-Button Compliance Toolbar -->
+                    <div class="game-compliance-bar">
+                        <span class="compliance-label"><i class="fa-solid fa-shield-halved"></i> Conformidade:</span>
+                        <a href="https://henriquesousab.github.io/puzzleglot-privacy/" target="_blank" rel="noopener" class="compliance-btn">
+                            <i class="fa-solid fa-user-shield"></i> Privacidade
+                        </a>
+                        <a href="https://henriquesousab.github.io/puzzleglot-privacy/terms.html" target="_blank" rel="noopener" class="compliance-btn">
+                            <i class="fa-solid fa-file-contract"></i> Termos de Uso
+                        </a>
+                        <a href="https://henriquesousab.github.io/puzzleglot-privacy/delete-account.html" target="_blank" rel="noopener" class="compliance-btn delete-btn">
+                            <i class="fa-solid fa-user-xmark"></i> Exclusão de Conta
+                        </a>
                     </div>
-                </div>
-            </div>
-
-            <!-- Compliance & Player Trust Center (The 3 Dedicated Game Cards) -->
-            <div class="compliance-hub">
-                <div class="hub-title">
-                    <i class="fa-solid fa-shield-cat"></i> Central de Privacidade & Conformidade
-                </div>
-                <div class="hub-grid">
-                    <!-- 1. Política de Privacidade -->
-                    <a href="https://henriquesousab.github.io/puzzleglot-privacy/" target="_blank" rel="noopener" class="hub-card">
-                        <div>
-                            <div class="hub-card-top">
-                                <div class="hub-icon">
-                                    <i class="fa-solid fa-user-shield"></i>
-                                </div>
-                                <div class="hub-card-title">Privacidade</div>
-                            </div>
-                            <p class="hub-card-desc">
-                                Diretrizes de proteção de dados, permissões e conformidade total com LGPD & GDPR.
-                            </p>
-                        </div>
-                        <div class="hub-card-action">
-                            <span>Acessar Política</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </a>
-
-                    <!-- 2. Termos de Uso -->
-                    <a href="https://henriquesousab.github.io/puzzleglot-privacy/terms.html" target="_blank" rel="noopener" class="hub-card">
-                        <div>
-                            <div class="hub-card-top">
-                                <div class="hub-icon">
-                                    <i class="fa-solid fa-file-contract"></i>
-                                </div>
-                                <div class="hub-card-title">Termos de Uso</div>
-                            </div>
-                            <p class="hub-card-desc">
-                                Regras de utilização dos mini-games, pontuações e condições de serviço.
-                            </p>
-                        </div>
-                        <div class="hub-card-action">
-                            <span>Ler Termos</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </a>
-
-                    <!-- 3. Exclusão de Conta -->
-                    <a href="https://henriquesousab.github.io/puzzleglot-privacy/delete-account.html" target="_blank" rel="noopener" class="hub-card">
-                        <div>
-                            <div class="hub-card-top">
-                                <div class="hub-icon" style="color: #f87171; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.25);">
-                                    <i class="fa-solid fa-user-xmark"></i>
-                                </div>
-                                <div class="hub-card-title">Exclusão de Conta</div>
-                            </div>
-                            <p class="hub-card-desc">
-                                Canal direto para gerenciar e solicitar a exclusão de dados e histórico de nuvem.
-                            </p>
-                        </div>
-                        <div class="hub-card-action" style="color: #f87171;">
-                            <span>Solicitar Exclusão</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Additional Info Grid -->
-        <div class="section-grid">
-            <!-- Tech Stack Card -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-code"></i>
+        <!-- Career & Technical Expertise (From Resume) -->
+        <div class="section-heading">
+            <i class="fa-solid fa-layer-group" style="color: var(--cyan-glow);"></i>
+            <h2>Trajetória & Competências</h2>
+            <div class="section-heading-line"></div>
+        </div>
+
+        <div class="pillars-grid">
+            <!-- Pillar 1: Gestão & Liderança -->
+            <div class="pillar-card">
+                <div>
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <i class="fa-solid fa-chart-diagram"></i>
+                        </div>
+                        <div class="pillar-title">Gestão de Projetos</div>
                     </div>
-                    <div>
-                        <h2 class="card-title">Desenvolvimento & Engenharia</h2>
-                    </div>
+                    <p class="pillar-desc">
+                        Mais de 16 anos liderando implantações e integrações críticas. Conexão entre negócios, tecnologia e liderança, com foco em escopo, cronogramas, riscos e qualidade.
+                    </p>
                 </div>
-                <p class="card-desc">
-                    Criação de aplicativos para Android com arquiteturas escaláveis, foco em performance, feedback háptico e interfaces fluidas.
-                </p>
-                <div class="tech-tags">
-                    <span class="tech-pill"><i class="fa-brands fa-js"></i> TypeScript</span>
-                    <span class="tech-pill"><i class="fa-brands fa-android"></i> Android SDK</span>
-                    <span class="tech-pill"><i class="fa-solid fa-mobile-screen"></i> Capacitor</span>
-                    <span class="tech-pill"><i class="fa-solid fa-database"></i> Firebase</span>
+                <div class="chip-row">
+                    <span class="chip">Project Management</span>
+                    <span class="chip">Stakeholders</span>
+                    <span class="chip">SLA & Entregas</span>
                 </div>
             </div>
 
-            <!-- Gaming & Ecosystem Card -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-gamepad"></i>
+            <!-- Pillar 2: Integrações & Automação -->
+            <div class="pillar-card">
+                <div>
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <div class="pillar-title">Integrações & IA</div>
                     </div>
-                    <div>
-                        <h2 class="card-title">Gamer & Game Design</h2>
-                    </div>
+                    <p class="pillar-desc">
+                        Arquitetura de integrações REST/JSON e SOAP, automações com Python e PowerShell, bancos SQL Server, WhatsApp Flows, Voicebots e benchmarking de LLMs (ChatGPT / Gemini).
+                    </p>
                 </div>
-                <p class="card-desc">
-                    Entusiasta de jogos e mecânicas arcade. Criando experiências onde desafios de raciocínio rápido se transformam em retenção e aprendizado real.
-                </p>
-                <div class="tech-tags">
-                    <span class="tech-pill"><i class="fa-solid fa-trophy"></i> Conquistas</span>
-                    <span class="tech-pill"><i class="fa-solid fa-cloud"></i> Cloud Save</span>
-                    <span class="tech-pill"><i class="fa-solid fa-chart-line"></i> Analytics</span>
+                <div class="chip-row">
+                    <span class="chip">APIs REST / SOAP</span>
+                    <span class="chip">Python & PowerShell</span>
+                    <span class="chip">SQL Server</span>
+                    <span class="chip">LLMs & IA</span>
+                </div>
+            </div>
+
+            <!-- Pillar 3: Infraestrutura & Certificações -->
+            <div class="pillar-card">
+                <div>
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div class="pillar-title">Infra & Sistemas</div>
+                    </div>
+                    <p class="pillar-desc">
+                        Graduação em Redes de Computadores e certificações internacionais de administração de sistemas Linux. Experiência sólida em VoIP, ambientes virtualizados e segurança.
+                    </p>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">LPIC-1 Linux</span>
+                    <span class="chip">CompTIA Linux+</span>
+                    <span class="chip">SUSE CLA</span>
+                    <span class="chip">Hyper-V</span>
                 </div>
             </div>
         </div>
 
-        <!-- Footer -->
+        <!-- Clean & Minimal Footer (No repetition) -->
         <footer>
-            <div class="footer-nav">
-                <a href="https://henriquesousab.github.io/puzzleglot-privacy/" target="_blank" rel="noopener">Política de Privacidade</a> •
-                <a href="https://henriquesousab.github.io/puzzleglot-privacy/terms.html" target="_blank" rel="noopener">Termos de Uso</a> •
-                <a href="https://henriquesousab.github.io/puzzleglot-privacy/delete-account.html" target="_blank" rel="noopener">Exclusão de Conta</a> •
-                <a href="app-ads.txt">app-ads.txt</a> •
-                <a href="https://github.com/henriquesousab" target="_blank" rel="noopener">GitHub</a>
-            </div>
-            <p>&copy; 2026 Henrique Sousa. Todos os direitos reservados.</p>
-            <div class="footer-badge">
-                <span class="status-dot"></span> Site Oficial de Desenvolvedor & Central de Conformidade
-            </div>
+            <p>&copy; 2026 Luis Henrique Sousa Barros. Fortaleza - CE, Brasil.</p>
+            <p>
+                <a href="app-ads.txt" class="ads-txt-link">
+                    <i class="fa-solid fa-shield-check"></i> AdMob app-ads.txt
+                </a>
+            </p>
         </footer>
     </div>
 
